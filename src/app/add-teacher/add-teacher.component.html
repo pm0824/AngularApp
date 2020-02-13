@@ -8,15 +8,9 @@
     <br/><br>
     <label for="">ID: </label>
     <input type="number" name="id" id="" [(ngModel)]='id'><br/><br>
-    <label for="">Roll no: </label>
-    <input type="number" name="rollnum" id="" [(ngModel)]='rollno'><br/><br>
-
+   
     <label for="">Branch: </label>
     <input type="text" name="branch" id="" [(ngModel)]='branch'><br/><br>
-    <label for="">Class: </label>
-    <input type="text" name="id" id="" [(ngModel)]='class'><br/><br>
-    <label for="">Educational year: </label>
-    <input type="text" name="" id="" [(ngModel)]='edyear'><br/><br>
     <label for="">Image: </label>
     <input type="file" name="image" id="" (change)="handleFileSelect($event)"><br/><br>
     <div *ngIf='base64textString !== null'>

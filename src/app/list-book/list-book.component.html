@@ -1,0 +1,39 @@
+<div>
+    <table>
+        <tr>
+            <td>Title</td>
+            <td>Author</td>
+           
+        </tr>
+        <tr>
+            <td>
+                <select [(ngModel)]='selectedBook'>
+                    <option *ngFor="let a of authors">{{a}}</option>
+                </select>
+                {{selectedBook}}
+            </td>
+            <td><select name="" id=""></select></td>
+           
+        </tr>
+    </table>
+    <button (click)='onSearch()'>Search</button>
+</div>
+
+<table border="1">
+    <tr>
+        <th>BookID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Edition</th>
+        <th>Price</th>
+    </tr>
+    <tr *ngFor="let s of books">
+        <td>{{b.id}}</td>
+        <td>{{b.title}}</td>
+        <td>{{b.author}}</td>
+        <td>{{b.publisher}}</td>
+        <td>{{b.edition}}</td>
+        <td>{{b.price}}</td>
+    </tr>
+</table>

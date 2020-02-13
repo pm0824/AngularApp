@@ -1,0 +1,45 @@
+<div>
+    <table>
+        <tr>
+            <td>Branch</td>
+            <td>Class</td>
+            <td>Year</td>
+        </tr>
+        <tr>
+            <td>
+                <select [(ngModel)]='selectedBranch'>
+                    <option *ngFor="let b of branches">{{b}}</option>
+                </select>
+               
+            </td>
+            <td>
+                <select [(ngModel)]='selectedClass'>
+                    <option *ngFor="let c of classes">{{c}}</option>
+                </select>
+                
+            </td>
+            
+            <td><input type="text" name="" id="" [(ngModel)]='year'></td>
+        </tr>
+    </table>
+    <button (click)='onSearch()'>Search</button>
+</div>
+{{students}}
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Roll</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Class</th>
+        <th>Year</th>
+    </tr>
+    <!--tr-- *ngFor="let s of students">
+        <td>{{s.studentid}}</td>
+        <td>{{s.roll}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.branch}}</td>
+        <td>{{s.class}}</td>
+        <td>{{s.year}}</td>
+    </!--tr-->
+</table>

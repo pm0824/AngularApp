@@ -3,18 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { ServerConfig } from '../server-config';
 
 @Component({
-  selector: 'app-add-student',
-  templateUrl: './add-student.component.html',
-  styleUrls: ['./add-student.component.css']
+  selector: 'app-add-teacher',
+  templateUrl: './add-teacher.component.html',
+  styleUrls: ['./add-teacher.component.css']
 })
-export class AddStudentComponent implements OnInit {
+export class AddTeacherComponent implements OnInit {
 
   public name = '';
   public id = '';
-  public rollno='';
-  public class='';
   public branch = '';
-  public edyear='';
   base64textString: string = null;
 
   public message='';
@@ -26,21 +23,18 @@ export class AddStudentComponent implements OnInit {
 
   public onSave() {
 
-    this.http.post(ServerConfig.BASE_URL + '/addstudent', {
+    this.http.post(ServerConfig.BASE_URL + '/addteacher', {
       name: this.name,
       id: this.id,
-      rollno:this.rollno,
-      branch:this.branch,
-      class:this.class,
-      edyear:this.edyear,
+      branch: this.branch,
       image: this.base64textString
     }).subscribe((response) => {
       console.log('response', response);
-      this.message='Student added successfully';
+      this.message='Teacher added successfully';
       // console.log('error',err);
     }, (err) => {
       console.log('error', err);
-      this.message='Duplicate Student ID';
+      this.message='Duplicate Teacher ID';
     });
 
     console.log('saving data');
@@ -64,4 +58,5 @@ export class AddStudentComponent implements OnInit {
     this.base64textString = btoa(binaryString);
     console.log(btoa(binaryString));
   }
+
 }

@@ -1,0 +1,14 @@
+
+.regform{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.box{
+    margin: 2%;
+    padding: 2%;
+    width: 35%;
+    background-color: lightgrey;
+    border-radius: 2em;
+}

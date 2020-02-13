@@ -1,0 +1,27 @@
+
+<div class="regform">
+    <div class="box">
+    <label for="">Book Title: </label>
+    <!--input type="text" name="name" placeholder="Enter name" value='{{name}}'-->
+    <!--input type="text" name="name" placeholder="Enter name" [value]='name'-->
+    <input type="text" name="name" placeholder="Enter name" [(ngModel)]='booktitle'>
+    <br/><br>
+    <label for="">Author: </label>
+    <input type="text" name="" id="" [(ngModel)]='author'><br/><br>
+    <label for="">Publisher: </label>
+    <input type="text" name="" id="" [(ngModel)]='publisher'><br/><br>
+    <label for="">Edition: </label>
+    <input type="text" name="" id="" [(ngModel)]='edition'><br/><br>
+    <label for="">Price: </label>
+    <input type="number" name="" id="" [(ngModel)]='price'><br/><br>
+    
+    <br>
+    <button (click)='onSave()' >Save</button>
+    <br/>
+    {{message}}
+    </div>
+</div>
+
+
+
+
