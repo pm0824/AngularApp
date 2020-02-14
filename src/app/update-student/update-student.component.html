@@ -1,1 +1,49 @@
-<p>update-student works!</p>
+<div class="regform">
+
+    <div class="card">
+        <div class="card-header text-center">
+            <h5>Student Registration Form</h5>
+        </div>
+        <div class="card-body">
+
+            <img src='{{base_url}}/static/images/students/{{student.studentid}}.jpg' />
+            <br />
+            <label for="">Name: </label>
+            <!--input type="text" name="name" placeholder="Enter name" value='{{name}}'-->
+            <!--input type="text" name="name" placeholder="Enter name" [value]='name'-->
+            <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='student.name'>
+
+            <label for="">ID: </label>
+            <input type="number" name="id" id="" class="form-control" [(ngModel)]='student.id'>
+            <label for="">Roll no: </label>
+            <input type="number" name="rollnum" id="" class="form-control" [(ngModel)]='student.rollno'>
+
+            <label for="">Branch: </label>
+            <select [(ngModel)]='student.branch'>
+                <option *ngFor="let b of branches">{{b}}</option>
+            </select>
+            <br>
+            <label for="">Class: </label>
+            <select [(ngModel)]='student.sclass'>
+                <option *ngFor="let b of classes">{{b}}</option>
+            </select>
+            <br>
+            <label for="">Educational year: </label>
+            <input type="text" name="" id="" class="form-control" [(ngModel)]='student.edyear' placeholder="yyyy-yyyy">
+            <label for="">Image: </label><br>
+                <input type="file" name="image" id=""  (change)="handleFileSelect($event)"><br/>
+                <div *ngIf='base64textString !== null'>
+                    Photo selected
+            </div>
+                
+
+            <br>
+            <button type="button" class="btn btn-primary btn-block" (click)='onUpdate()'
+                [disabled]='base64textString === null'>Update</button>
+            <br />
+            {{message}}
+        </div>
+
+
+    </div>
+</div>

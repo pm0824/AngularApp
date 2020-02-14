@@ -15,6 +15,8 @@ export class AddStudentComponent implements OnInit {
   public class='';
   public branch = '';
   public edyear='';
+  public branches=['CSE', 'IT', 'ELN','MECH','CIVIL'];
+  public classes=['FE','SE','TE','BE']
   base64textString: string = null;
 
   public message='';

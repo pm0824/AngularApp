@@ -5,6 +5,7 @@ import { ListStudentComponent } from './list-student/list-student.component';
 import { ListBookComponent } from './list-book/list-book.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   ,
   {
     path: 'add-book', component: AddBookComponent
-  }
+  },
+  { path: 'update-student/:id', component: UpdateStudentComponent }
 
 ];
 

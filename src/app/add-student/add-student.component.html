@@ -1,33 +1,51 @@
 
 <div class="regform">
-    <div class="box">
-    <label for="">Name: </label>
-    <!--input type="text" name="name" placeholder="Enter name" value='{{name}}'-->
-    <!--input type="text" name="name" placeholder="Enter name" [value]='name'-->
-    <input type="text" name="name" placeholder="Enter name" [(ngModel)]='name'>
-    <br/><br>
-    <label for="">ID: </label>
-    <input type="number" name="id" id="" [(ngModel)]='id'><br/><br>
-    <label for="">Roll no: </label>
-    <input type="number" name="rollnum" id="" [(ngModel)]='rollno'><br/><br>
-
-    <label for="">Branch: </label>
-    <input type="text" name="branch" id="" [(ngModel)]='branch'><br/><br>
-    <label for="">Class: </label>
-    <input type="text" name="id" id="" [(ngModel)]='class'><br/><br>
-    <label for="">Educational year: </label>
-    <input type="text" name="" id="" [(ngModel)]='edyear'><br/><br>
-    <label for="">Image: </label>
-    <input type="file" name="image" id="" (change)="handleFileSelect($event)"><br/><br>
-    <div *ngIf='base64textString !== null'>
-        Photo selected
-    </div>
-    <br>
-    <button (click)='onSave()' [disabled]='base64textString === null'>Save</button>
-    <br/>
-    {{message}}
-    </div>
+    
+    <div class="card">
+        <div class="card-header text-center">
+          <h5>Student Registration Form</h5> 
+        </div>
+        <div class="card-body">
+            
+                <label for="">Name: </label>
+                <!--input type="text" name="name" placeholder="Enter name" value='{{name}}'-->
+                <!--input type="text" name="name" placeholder="Enter name" [value]='name'-->
+                <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='name'>
+                
+                <label for="">ID: </label>
+                <input type="number" name="id" id="" class="form-control" [(ngModel)]='id'>
+                <label for="">Roll no: </label>
+                <input type="number" name="rollnum" id="" class="form-control" [(ngModel)]='rollno'>
+            
+                <label for="">Branch: </label>
+                <select [(ngModel)]='branch'>
+                  <option *ngFor="let b of branches">{{b}}</option>
+                </select>
+                <br>
+                <label for="">Class: </label>
+                <select [(ngModel)]='class'>
+                  <option *ngFor="let c of classes">{{c}}</option>
+                </select>
+                <br>
+                <label for="">Educational year: </label>
+                <input type="text" name="" id="" class="form-control" [(ngModel)]='edyear' placeholder="yyyy-yyyy">
+                
+                <label for="">Image: </label><br>
+                <input type="file" name="image" id=""  (change)="handleFileSelect($event)"><br/>
+                <div *ngIf='base64textString !== null'>
+                    Photo selected
+                </div>
+                <br>
+                <button type="button" class="btn btn-primary btn-block" (click)='onSave()' [disabled]='base64textString === null'>Save</button>
+                <br/>
+                {{message}}
+                </div>
+            
+        
+      </div>
 </div>
+
+
 
 
 

@@ -11,12 +11,12 @@ import { ServerConfig } from '../server-config';
 export class ListStudentComponent implements OnInit {
 
   public students;
-  public branches = ['CSE', 'IT','ELN','Mech','Civil'];
-  public classes=['FE','SE','TE','BE']
-  public year=''
-  public selectedBranch = '';
-  public selectedClass = '';
-public message='';
+  public branches = ['CSE', 'IT', 'ELN', 'Mech', 'Civil'];
+  public classes = ['FE', 'SE', 'TE', 'BE']
+  public year = '2019-2020'
+  public selectedBranch = 'CSE';
+  public selectedClass = 'BE';
+  public message = '';
 
   constructor(private http: HttpClient) { }
 
@@ -25,22 +25,23 @@ public message='';
 
   public onSearch() {
 
-    
+
     this.http.post(ServerConfig.BASE_URL + '/liststudents', {
       branch: this.selectedBranch,
       class: this.selectedClass,
-      year:this.year
-    }).subscribe((response) => {      
+      year: this.year
+    }).subscribe((response) => {
       console.log('response', response);
-      this.message='Sent successfully';
-      this.students= response.result
+      this.message = 'Sent successfully';
+      this.students = response['result'];
+      console.log('this.students',this.students);
     }, (err) => {
       console.log('error', err);
-      this.message='Error!';
+      this.message = 'Error!';
     });
 
     console.log('saving data');
-    
+
   }
 
 }
