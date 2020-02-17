@@ -1,3 +1,12 @@
+.content{
+display: flex;
+justify-content: center;
+padding: 1% 0;
+}
+.content div{
+    background-color: white;
+    padding: 20px;
+}
 table
 {
     width: 100%;
