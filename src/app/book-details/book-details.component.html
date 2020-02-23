@@ -1,0 +1,35 @@
+<table border="1">
+    <tr>
+       
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Edition</th>
+        <th>Price</th>
+    </tr>
+    <tr *ngFor="let b of books">
+        
+        <td>{{b.booktitle}}</td>
+        <td>{{b.author}}</td>
+        <td>{{b.publisher}}</td>
+        <td>{{b.edition}}</td>
+        <td>{{b.price}}</td>
+    </tr>
+</table>
+
+<button (click)='findCopies()'>Find Copies</button>
+
+<table border="1">
+    <tr>
+       
+        <th>ID</th>
+       
+        <th>Barcode</th>
+    </tr>
+    <tr *ngFor="let b of bookcopies">
+        
+        <td>{{b.bookcopyid}}</td>
+        <td>{{b.barcode}}</td>
+        
+    </tr>
+</table>

@@ -6,6 +6,8 @@ import { ListBookComponent } from './list-book/list-book.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { UpdateStudentComponent } from './update-student/update-student.component';
+import { FindStudentComponent } from './find-student/find-student.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 
 const routes: Routes = [
@@ -25,7 +27,9 @@ const routes: Routes = [
   {
     path: 'add-book', component: AddBookComponent
   },
-  { path: 'update-student/:id', component: UpdateStudentComponent }
+  { path: 'update-student/:id', component: UpdateStudentComponent },
+  { path: 'find-student', component: FindStudentComponent },
+  { path: 'book-details/:id', component: BookDetailsComponent }
 
 ];
 

@@ -8,8 +8,6 @@
         <div class="card-body">
             
                 <label for="">Name: </label>
-                <!--input type="text" name="name" placeholder="Enter name" value='{{name}}'-->
-                <!--input type="text" name="name" placeholder="Enter name" [value]='name'-->
                 <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='name'required>
                 
                 <label for="">ID: </label>
@@ -32,14 +30,25 @@
                 <input type="text" name="" id="" class="form-control" [(ngModel)]='edyear' placeholder="yyyy-yyyy" required>
                 
                 <label for="">Image: </label><br>
-                <input type="file" name="image" id=""  (change)="handleFileSelect($event)"><br/>
+                <!--input type="file" name="image" id=""  (change)="handleFileSelect($event)"><br/-->
+                <div class="video-wrap">
+                  <video id="video" playsinline autoplay></video>
+              </div>
+              
+              <!-- Trigger canvas web API -->
+              <div class="controller">
+                  <button id="snap" (click)='onCapture()'>Capture</button>
+              </div>
+              <!-- Webcam video snapshot -->
+<canvas id="canvas" width="320" height="240"></canvas>
+
                 <div *ngIf='base64textString !== null'>
-                    Photo selected
+                    Photo captured
                 </div>
                 <br>
-                <button type="button" class="btn btn-primary btn-block" (click)='onSave()' [disabled]='base64textString === null'>Save</button>
+                <button type="button" class="btn btn-primary btn-block" (click)='onSave()' >Save</button>
                 <br/>
-                {{message}}
+                
                 </div>
                 
         

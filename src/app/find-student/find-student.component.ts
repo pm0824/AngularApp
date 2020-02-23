@@ -3,27 +3,23 @@ import { HttpClient } from '@angular/common/http';
 import { ServerConfig } from '../server-config';
 
 @Component({
-  selector: 'app-add-teacher',
-  templateUrl: './add-teacher.component.html',
-  styleUrls: ['./add-teacher.component.css']
+  selector: 'app-find-student',
+  templateUrl: './find-student.component.html',
+  styleUrls: ['./find-student.component.css']
 })
-export class AddTeacherComponent implements OnInit {
+export class FindStudentComponent implements OnInit {
 
-  public name = '';
-  public id = '';
-  public branch = '';
   base64textString: string = null;
   imageString: string= null;
   public video;
   public canvas;
+  public students;
+  public message="";
 
-
-  public message='';
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-
     this.video = document.getElementById('video');
     this.canvas = document.getElementById('canvas');
    
@@ -98,27 +94,32 @@ export class AddTeacherComponent implements OnInit {
     }
   }
   
-  public onSave() {
-      
-    this.http.post(ServerConfig.BASE_URL + '/addteacher', {
-      name: this.name,
-      id: this.id,
-      
-      branch:this.branch,
-      
-      image: this.base64textString
+
+  public onSearch() {
+
+
+    this.http.post(ServerConfig.BASE_URL + '/findstudent', {
+      image: this.base64textString 
     }).subscribe((response) => {
       console.log('response', response);
-      this.message='Teacher added successfully';
-      // console.log('error',err);
+      this.message = 'Sent successfully';
+      if (response['result']==="Fail")
+        {
+            console.log("Failed");
+            this.message="Student not found";
+        }
+        else{
+      this.students = response['result'];
+      console.log('this.students',this.students);
+    }
     }, (err) => {
       console.log('error', err);
-      this.message='Duplicate Teacher ID';
+      this.message = 'Error!';
     });
 
     console.log('saving data');
+
   }
 
-  
 
 }
