@@ -1,35 +1,50 @@
 
 <div class="regform">
-    
-    <div class="card">
+    <div class="card" style="width: 45%;">
         <div class="card-header text-center">
           <h5>Student Registration Form</h5> 
         </div>
         <div class="card-body">
             
-                <label for="">Name: </label>
-                <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='name'required>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="">Name: </label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='name'required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">ID: </label>
+                    <input type="text" name="id" id="" class="form-control" [(ngModel)]='id' placeholder="Enter Enrollment ID" required>
+                </div>
+            </div>
+               
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <select [(ngModel)]='branch' class="selectpicker" data-style="btn-primary" title="Choose Branch" data-width="100%">
+                    <option *ngFor="let b of branches">{{b}}</option>
+                    </select>
+                </div>
                 
-                <label for="">ID: </label>
-                <input type="number" name="id" id="" class="form-control" [(ngModel)]='id' placeholder="Enter Enrollment ID" required>
-                <label for="">Roll no: </label>
-                <input type="number" name="rollnum" id="" class="form-control" [(ngModel)]='rollno' placeholder="Enter Roll No." required>
-              <br>
-                <!--Branch Dropdown-->
-                <select [(ngModel)]='branch' class="selectpicker" data-style="btn-primary" title="Choose Branch" data-width="fit">
-                  <option *ngFor="let b of branches">{{b}}</option>
-                </select>
-                <!--Branch Dropdown end-->
-                <p style="display: inline-block; width: 15px;"></p>
-                <select [(ngModel)]='class' class="selectpicker" data-style="btn-primary" title="Choose Class" data-width="fit">
-                  <option *ngFor="let c of classes">{{c}}</option>
-                </select>
-                <br>
-                <br>
-                <label for="">Educational year: </label>
-                <input type="text" name="" id="" class="form-control" [(ngModel)]='edyear' placeholder="yyyy-yyyy" required>
+                <div class="form-group col-md-6">
+                   <select [(ngModel)]='class' class="selectpicker" data-style="btn-primary" title="Choose Class" data-width="100%">
+                    <option *ngFor="let c of classes">{{c}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="">Roll number : </label>
+                    <input type="text" name="rollnum" id="" class="form-control" [(ngModel)]='rollno' placeholder="Enter Roll No." required>    
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Educational year: </label>
+                    <input type="text" name="" id="" class="form-control" [(ngModel)]='edyear' placeholder="yyyy-yyyy" required>
+                </div>
+            </div>
+           
+               
                 
-                <label for="">Image: </label><br>
+                <label for="">Capture your face: </label><br>
                 <!--input type="file" name="image" id=""  (change)="handleFileSelect($event)"><br/-->
                 <div class="video-wrap">
                   <video id="video" playsinline autoplay></video>
@@ -37,7 +52,7 @@
               
               <!-- Trigger canvas web API -->
               <div class="controller">
-                  <button id="snap" (click)='onCapture()'>Capture</button>
+                  <button id="snap" (click)='onCapture()' class="btn btn-info btn-block">Capture</button>
               </div>
               <!-- Webcam video snapshot -->
 <canvas id="canvas" width="320" height="240"></canvas>
@@ -54,7 +69,12 @@
         
       </div>
 </div>
-
+<div class="ipgroup">
+    <div class="grpele">
+    </div>
+    <div class="grpele">
+    </div>
+</div>
 
 
 

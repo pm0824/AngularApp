@@ -15,6 +15,9 @@ export class BookDetailsComponent implements OnInit {
   public message = '';
   public base_url;
   public bookid;
+  public show=1;
+  public barcode='';
+ 
 
   constructor(private activatedRoute: ActivatedRoute, private http:HttpClient) {
     this.base_url=ServerConfig.BASE_URL;
@@ -56,15 +59,57 @@ export class BookDetailsComponent implements OnInit {
       id: this.bookid
     }).subscribe((response) => {
       console.log('response', response);
-      this.message = 'Sent successfully';
+      this.message = 'Record found successfully';
       this.bookcopies = response['result'];
       console.log('this.bookcopies',this.bookcopies);
+      if((this.bookcopies).length==0)
+
+      {
+        this.show=0;
+      }
     }, (err) => {
       console.log('error', err);
       this.message = 'Error!';
     });
 
     console.log('saving data');
+  }
+
+  public addCopy(){
+    this.http.post(ServerConfig.BASE_URL + '/addbookcopy', {
+      bookid:this.bookid,
+      barcode:this.barcode
+    }).subscribe((response) => {
+      console.log('response', response);
+      this.message = 'Book copy added successfully';
+     
+    }, (err) => {
+      console.log('error', err);
+      this.message = 'Error!';
+    });
+
+    console.log('saving data');
+  
+
+  }
+
+  public deleteCopy(bookcopyid){
+
+    this.http.post(ServerConfig.BASE_URL + '/deletebookcopy', {
+      bookcopyid:bookcopyid
+    }).subscribe((response) => {
+      console.log('response', response);
+      this.message = 'Deleted successfully';
+     
+    }, (err) => {
+      console.log('error', err);
+      this.message = 'Error!';
+    });
+
+    console.log('saving data');
+  
+
+
   }
 
 }
