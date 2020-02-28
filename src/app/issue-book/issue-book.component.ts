@@ -3,26 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { ServerConfig } from '../server-config';
 
 @Component({
-  selector: 'app-add-student',
-  templateUrl: './add-student.component.html',
-  styleUrls: ['./add-student.component.css']
+  selector: 'app-issue-book',
+  templateUrl: './issue-book.component.html',
+  styleUrls: ['./issue-book.component.css']
 })
-export class AddStudentComponent implements OnInit {
-
-  public name = '';
-  public id = '';
-  public rollno='';
-  public class='';
-  public branch = '';
-  public edyear='';
-  public branches=['CSE', 'IT', 'ELN','MECH','CIVIL'];
-  public classes=['FE','SE','TE','BE']
+export class IssueBookComponent implements OnInit {
   base64textString: string = null;
   imageString: string= null;
   public video;
   public canvas;
-
-  public message='';
+  public students;
+  public message="";
+  public barcode;
 
   constructor(private http: HttpClient) { }
 
@@ -35,6 +27,7 @@ export class AddStudentComponent implements OnInit {
     this.init().then((result) => {
       console.log('result', result);
     });
+
   }
 
   public async init() {
@@ -76,6 +69,7 @@ export class AddStudentComponent implements OnInit {
       console.log('blob', blob);
       this.createImageFromBlob(blob);
       // const img = new Image();
+      
       // img.src = window.URL.createObjectURL(blob);
       // console.log('img.src',img.src);
       // };
@@ -88,11 +82,11 @@ export class AddStudentComponent implements OnInit {
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageBlobUrl = reader.result;
-      //console.log("image",typeof(this.imageBlobUrl));
+      console.log("image",typeof(this.imageBlobUrl));
       this.imageString=this.imageBlobUrl;
-      //console.log("imgstr",this.imageString);
+      console.log("imgstr",this.imageString);
       this.base64textString = this.imageString.slice(this.imageString.indexOf(",")+1);
-      //console.log("string",this.base64textString);
+      console.log("string",this.base64textString);
     }, false);
     if (image) {
       // reader.readAsBinaryString(image);
@@ -100,27 +94,47 @@ export class AddStudentComponent implements OnInit {
     }
   }
   
-  public onSave() {
-      
-    this.http.post(ServerConfig.BASE_URL + '/addstudent', {
-      name: this.name,
-      id: this.id,
-      rollno:this.rollno,
-      branch:this.branch,
-      class:this.class,
-      edyear:this.edyear,
-      image: this.base64textString
+
+  public onSearch() {
+
+
+    this.http.post(ServerConfig.BASE_URL + '/findstudent', {
+      image: this.base64textString 
     }).subscribe((response) => {
       console.log('response', response);
-      this.message=response['message'];
-      // console.log('error',err);
+      this.message = 'Sent successfully';
+      if (response['result']==="Fail")
+        {
+            console.log("Failed");
+            this.message="Student not found";
+        }
+        else{
+      this.students = response['result'];
+      console.log('this.students',this.students);
+    }
     }, (err) => {
       console.log('error', err);
-      this.message='Duplicate Student ID';
+      this.message = 'Error!';
     });
 
     console.log('saving data');
   }
 
+
+  public onScanbarcode(){
+    this.http.post(ServerConfig.BASE_URL + '/scanbarcode', {
+      barcode: this.base64textString
+    }).subscribe((response) => {
+      console.log('response', response);
+
+      this.message="sent barcode image"
+      }, (err) => {
+      console.log('error', err);
+      this.message = 'Error!';
+    });
+
+    console.log('saving data');
   
+
+  }
 }

@@ -1,0 +1,40 @@
+<div class="video-wrap">
+    <video id="video" playsinline autoplay></video>
+</div>
+
+<!-- Trigger canvas web API -->
+<div class="controller">
+    <button id="snap" (click)='onCapture()'>Capture</button>
+</div>
+<!-- Webcam video snapshot -->
+<canvas id="canvas" width="320" height="240"></canvas>
+
+  <div *ngIf='base64textString !== null'>
+      Photo captured
+  </div>
+  <br>
+  <button (click)=onSearch()>Search</button>
+  
+  <button (click)=onScanbarcode()>Scan Barcode</button>
+
+  <!-- {{students}} -->
+<table *ngIf='students!=null' border="1">
+    <tr>
+        <th>ID</th>
+        <th>Roll</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Class</th>
+        <th>Year</th>
+    </tr>
+    <tr *ngFor="let s of students">
+        <td>{{s.studentid}}</td>
+        <td>{{s.rollno}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.branch}}</td>
+        <td>{{s.sclass}}</td>
+        <td>{{s.edyear}}</td>
+    </tr>
+</table>
+
+<p *ngIf='message!=null'>{{message}}</p>
