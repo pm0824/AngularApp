@@ -1,0 +1,13 @@
+.issue{
+    padding: 25px;
+    
+}
+
+.camera{
+    border: 12px solid rgb(65, 63, 63);
+    margin: 20px;
+}
+
+.issue button{
+    margin: 0 10px;
+}

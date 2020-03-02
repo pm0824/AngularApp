@@ -39,8 +39,30 @@
 <p *ngIf="!show">Copies Not Found!...</p>
 <br>
 <p>Enter Barcode of new copy:</p>
-<input type="text" name="" id="" [(ngModel)]='barcode' >
-<br>
-<button (click)="addCopy()">Add copy</button>
+
+<!--Barcode scanner-->
+
+<div class="d-flex justify-content-center">
+    <video id="video" playsinline autoplay class="camera"></video>
+</div>
+
+
+<!-- Trigger canvas web API -->
+<div class="d-flex justify-content-center">
+    <button id="snap" (click)='onCapture()' class="btn btn-primary">Capture</button>
+</div>
+<!-- Webcam video snapshot -->
+<div class="d-flex justify-content-center">
+    <canvas id="canvas" width="320" height="240" class="camera"></canvas>
+</div>
+<div *ngIf='base64textString !== null' class="d-flex justify-content-center">
+    Photo captured
+</div>
+
+
+
+<!---->
+
+<button (click)="addCopy()" class="d-flex justify-content-center">Add copy</button>
 <br>
 <p>{{message}}</p>

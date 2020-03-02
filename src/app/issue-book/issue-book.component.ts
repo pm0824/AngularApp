@@ -15,6 +15,11 @@ export class IssueBookComponent implements OnInit {
   public students;
   public message="";
   public barcode;
+  public books;
+  public issuedate;
+  public returndate;
+  public sid;
+  public bcopyid;
 
   constructor(private http: HttpClient) { }
 
@@ -82,11 +87,11 @@ export class IssueBookComponent implements OnInit {
     let reader = new FileReader();
     reader.addEventListener("load", () => {
       this.imageBlobUrl = reader.result;
-      console.log("image",typeof(this.imageBlobUrl));
+      //console.log("image",typeof(this.imageBlobUrl));
       this.imageString=this.imageBlobUrl;
-      console.log("imgstr",this.imageString);
+     // console.log("imgstr",this.imageString);
       this.base64textString = this.imageString.slice(this.imageString.indexOf(",")+1);
-      console.log("string",this.base64textString);
+      //console.log("string",this.base64textString);
     }, false);
     if (image) {
       // reader.readAsBinaryString(image);
@@ -111,6 +116,8 @@ export class IssueBookComponent implements OnInit {
         else{
       this.students = response['result'];
       console.log('this.students',this.students);
+      this.sid= this.students[0].studentid;
+      console.log("studentid",this.sid);
     }
     }, (err) => {
       console.log('error', err);
@@ -121,13 +128,40 @@ export class IssueBookComponent implements OnInit {
   }
 
 
-  public onScanbarcode(){
-    this.http.post(ServerConfig.BASE_URL + '/scanbarcode', {
+  public onFindbook(){
+    this.http.post(ServerConfig.BASE_URL + '/findbook', {
       barcode: this.base64textString
     }).subscribe((response) => {
       console.log('response', response);
 
-      this.message="sent barcode image"
+      this.message="sent barcode image";
+      this.books=response['result'];
+      this.bcopyid=this.books[0];
+      
+      console.log('bookcopyid',this.bcopyid);
+      console.log('this.books',this.books);
+      }, (err) => {
+      console.log('error', err);
+      this.message = 'Error!';
+    });
+
+    console.log('saving data');
+  
+
+  }
+
+  public onIssuebook(){
+    this.http.post(ServerConfig.BASE_URL + '/issuebook', {
+      studentid:this.sid,
+      bcopyid:this.bcopyid,
+      issuedate:this.issuedate,
+      returndate:this.returndate
+    }).subscribe((response) => {
+      console.log('response', response);
+
+      this.message="Book issued";
+      
+      
       }, (err) => {
       console.log('error', err);
       this.message = 'Error!';
