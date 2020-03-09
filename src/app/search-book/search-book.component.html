@@ -1,0 +1,28 @@
+<h1>Search Book</h1>
+<input type="text" placeholder="Enter book name" [(ngModel)]='booktitle'/>
+<br>
+<button (click)='onSearch()'>Search</button>
+<br>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Edition</th>
+        <th>Available</th>
+        <th>Total books</th>
+        
+    </tr>
+    <tr *ngFor="let b of books">
+        <td>{{b[0]}}</td>
+        <td><a routerLink='/issue-book'>{{b[1]}}</a></td>
+        <td>{{b[2]}}</td>
+        <td>{{b[3]}}</td>
+        <td>{{b[4]}}</td>
+        <td>{{b[6]}}</td>
+        <td>{{b[7]}}</td>
+        
+    </tr>
+    
+</table>

@@ -1,6 +1,10 @@
 .issue{
-    padding: 25px;
+    padding: 10px;
     
+}
+.capture-section{
+    display: table;
+  margin: auto;
 }
 
 .camera{

@@ -158,7 +158,11 @@ export class IssueBookComponent implements OnInit {
       returndate:this.returndate
     }).subscribe((response) => {
       console.log('response', response);
-
+      if(response['result']===0)
+      {
+        this.message="Book already issued to someone else"
+      }
+      else
       this.message="Book issued";
       
       

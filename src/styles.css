@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    height: 100%;
+}
+
+body{
+    
+height: 100%;
+padding: 0;
+margin: 0;
+  
+  
+}
+
+.bg{
+    background-image: url(assets/img/library.jpg);
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: crisp-edges;
+}

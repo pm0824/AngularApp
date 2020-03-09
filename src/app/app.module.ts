@@ -14,6 +14,7 @@ import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { FindStudentComponent } from './find-student/find-student.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { IssueBookComponent } from './issue-book/issue-book.component';
+import { SearchBookComponent } from './search-book/search-book.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { IssueBookComponent } from './issue-book/issue-book.component';
     AddTeacherComponent,
     FindStudentComponent,
     BookDetailsComponent,
-    IssueBookComponent
+    IssueBookComponent,
+    SearchBookComponent
   ],
   imports: [
     BrowserModule,

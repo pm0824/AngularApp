@@ -11,8 +11,8 @@ export class ListBookComponent implements OnInit {
 
   public books;
   public titles = ['OS','TOC','DS','CPP'];
-  public authors = ['ABC','PQR','XYZ'];
-  public publishers = ['abc','pqr','xyz'];
+  public authors = ['ABC','PQR','XYZ','cppauth','tocauth'];
+  public publishers = ['abc','pqr','xyz','cppub','tocpub'];
   public selectedTitle = '';
   public selectedAuthor='';
   public selectedPublisher='';
