@@ -13,8 +13,8 @@ export class AddBookComponent implements OnInit {
   public author = '';
   public publisher = '';
   public edition='';
-  public price=0;
-
+  public price='';
+  public branch='';
  
   public message='';
 
@@ -29,6 +29,7 @@ export class AddBookComponent implements OnInit {
       booktitle: this.booktitle,
       author: this.author,
       publisher: this.publisher,
+      branch:this.branch,
       edition:this.edition,
       price:this.price
     }).subscribe((response) => {
@@ -37,7 +38,7 @@ export class AddBookComponent implements OnInit {
       // console.log('error',err);
     }, (err) => {
       console.log('error', err);
-      this.message='Duplicate Student ID';
+      this.message='Error!';
     });
 
     console.log('saving data');

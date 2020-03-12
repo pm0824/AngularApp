@@ -1,0 +1,44 @@
+<div class="content">
+    <div>
+    <table>
+        <tr>
+           
+            <td>Branch</td>
+        </tr>
+        <tr>
+            <td>
+                <select [(ngModel)]='selectedBranch'>
+                    <option *ngFor="let b of branches">{{b}}</option>
+                </select>
+               
+            </td>
+            <!-- <td>
+                <select [(ngModel)]='selectedClass'>
+                    <option *ngFor="let c of classes">{{c}}</option>
+                </select>
+                
+            </td> -->
+            
+            
+        </tr>
+    </table>
+    <button type="button" class="btn btn-primary" (click)='onSearch()'>Search</button>
+
+<!-- {{students}} -->
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Branch</th>
+        
+    </tr>
+    <tr *ngFor="let t of teachers">
+        <td>{{t.teacherid}}</td>
+        
+        <td><a routerLink='/update-teacher/{{t.teacherid}}'>{{t.name}}</a></td>
+        <td>{{t.branch}}</td>
+        
+    </tr>
+</table>
+</div>
+</div>

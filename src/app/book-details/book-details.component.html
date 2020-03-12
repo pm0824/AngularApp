@@ -1,68 +1,88 @@
-<table border="1">
-    <tr>
-       
-        <th>Title</th>
-        <th>Author</th>
-        <th>Publisher</th>
-        <th>Edition</th>
-        <th>Price</th>
-    </tr>
-    <tr *ngFor="let b of books">
+<section style="padding:20px 12% 20px 12%;">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3>ADD BOOK COPIES</h3>
+            <div class="row">
+                <div class="col-sm-8">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Publisher</th>
+                            <th>Edition</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr *ngFor="let b of books">
+                            <td>{{b.booktitle}}</td>
+                            <td>{{b.author}}</td>
+                            <td>{{b.publisher}}</td>
+                            <td>{{b.edition}}</td>
+                            <td>{{b.price}}</td>
+                        </tr>
+                    </table>        
+                   
+                    <div class="sbtn">
+                        <button (click)='findCopies()' class="square_btn">Find Copies</button>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <table class="table table-striped" *ngIf="show">
+                        <tr>
+                        
+                            <th>ID</th>
+                        
+                            <th>Barcode</th>
         
-        <td>{{b.booktitle}}</td>
-        <td>{{b.author}}</td>
-        <td>{{b.publisher}}</td>
-        <td>{{b.edition}}</td>
-        <td>{{b.price}}</td>
-    </tr>
-</table>
-
-<button (click)='findCopies()'>Find Copies</button>
-
-<table border="1" *ngIf="show">
-    <tr>
-       
-        <th>ID</th>
-       
-        <th>Barcode</th>
-
-        <th>Delete ?</th>
-    </tr>
-    <tr *ngFor="let b of bookcopies">
+                            <th>Delete ?</th>
+                        </tr>
+                        <tr *ngFor="let b of bookcopies">
+                            
+                            <td>{{b.bookcopyid}}</td>
+                            <td>{{b.barcode}}</td>
+                            <td><button (click)='deleteCopy(b.bookcopyid)'>Delete</button></td>
+                        </tr>
+                    </table>
         
-        <td>{{b.bookcopyid}}</td>
-        <td>{{b.barcode}}</td>
-        <td><button (click)='deleteCopy(b.bookcopyid)'>Delete</button></td>
-    </tr>
-</table>
+                </div>
+            </div>
+            
+            
 
-<p *ngIf="!show">Copies Not Found!...</p>
-<br>
-<p>Enter Barcode of new copy:</p>
+            
+            <p *ngIf="!flag" class="text-center text-danger">Copies Not Found!...</p>
+            <br>
+            <p class="text-center" style="font-weight: bold;">Enter Barcode of new copy:</p>
 
-<!--Barcode scanner-->
+            <!--Barcode scanner-->
 
-<div class="d-flex justify-content-center">
-    <video id="video" playsinline autoplay class="camera"></video>
-</div>
+            <div class="row ">
+                <div class="col-md-5">
+                    <div class="capture-section">
+                        <video id="video" playsinline autoplay class="camera"></video>
+                    </div>
+                </div>
+        
+                <div class="col-md-2 text-center">
+                    <div class="cap">
+                        <button id="snap" (click)='onCapture()' class="cbtn"  type="button">CAPTURE</button>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-5">
+                    <div class="capture-section">
+                        <canvas id="canvas" width="320" height="240" class="camera"></canvas>
+                    </div>
+                </div>
+            </div>
 
-
-<!-- Trigger canvas web API -->
-<div class="d-flex justify-content-center">
-    <button id="snap" (click)='onCapture()' class="btn btn-primary">Capture</button>
-</div>
-<!-- Webcam video snapshot -->
-<div class="d-flex justify-content-center">
-    <canvas id="canvas" width="320" height="240" class="camera"></canvas>
-</div>
-<div *ngIf='base64textString !== null' class="d-flex justify-content-center">
-    Photo captured
-</div>
-
-
-
-<!---->
-
-<button (click)="addCopy()" class="d-flex justify-content-center">Add copy</button>
-<br>
-<p>{{message}}</p>
+            
+            <div class="sbtn">
+                <button (click)='addCopy' class="square_btn">Add Copy</button>
+            </div>
+            <br>
+            <p>{{message}}</p>
+            </div>
+    </div>
+</section>

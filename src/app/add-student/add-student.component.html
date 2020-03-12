@@ -53,20 +53,26 @@
                 <label for="">Capture your face: </label><br>
                 
                 <div class="video-wrap">
-                  <video id="video" playsinline autoplay></video>
+                  <video id="video" playsinline autoplay class="camera"></video>
                 </div>
               
                 <!-- Trigger canvas web API -->
                 <div class="controller">
-                    <button id="snap" (click)='onCapture()' class="btn btn-info btn-block">Capture</button>
+                    <div class="sbtn">
+                        <button (click)='onCapture()' id="snap" class="square_btn">Capture</button>
+                    </div>
                 </div>
             </div>
               <!--Capture end-->
               <!-- Webcam video snapshot -->
             <div class="col-md-4">
                 <label for="">Captured your face: </label><br>
-                <canvas id="canvas" width="320" height="240"></canvas>    <br>
-                    <button type="button" class="btn btn-primary btn-block" (click)='onSave()' >Save</button>
+                <canvas id="canvas" width="320" height="240" class="camera"></canvas>    <br>
+                   
+                    <div class="sbtn">
+                        <button (click)='onSave()' class="square_btn">Save</button>
+                    </div>
+                    
                     <br/>
                 
             </div>

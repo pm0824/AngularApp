@@ -1,46 +1,50 @@
-<div>
-    <table>
-        <tr>
-            <td>Title</td>
-            <td>Author</td>
-            <td>Publisher</td>
-        </tr>
-        <tr>
-            <td>
-                <select [(ngModel)]='selectedTitle'>
-                    <option *ngFor="let t of titles">{{t}}</option>
-                </select>
-              
-            </td>
-            <td><select [(ngModel)]='selectedAuthor'>
-                <option *ngFor="let a of authors">{{a}}</option>
-            </select>
-            </td>
-            <td><select [(ngModel)]='selectedPublisher'>
-                <option *ngFor="let p of publishers">{{p}}</option>
-            </select>
-            </td>
-           
-        </tr>
-    </table>
-    <button (click)='onSearch()'>Search</button>
-</div>
+<section style="padding:20px 12% 20px 12%;">
 
-<table border="1">
-    <tr>
-       
-        <th>Title</th>
-        <th>Author</th>
-        <th>Publisher</th>
-        <th>Edition</th>
-        <th>Price</th>
-    </tr>
-    <tr *ngFor="let b of books">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3>FIND BOOKS</h3>
+            <hr>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Title :</label>
+                    <input class="form-control" type="text" [(ngModel)]='title'>
+                </div>
+                <div class="col-sm-4">
+                    <label>Author :</label>
+                    <input class="form-control" type="text" [(ngModel)]='author'>
+                </div>
+                <div class="col-sm-4">
+                    <label>Publisher :</label>
+                    <input class="form-control" type="text" [(ngModel)]='publisher'>
+                </div>
+
+            </div>
+
+            <div class="sbtn">
+                <button (click)='onSearch()' class="square_btn">Search</button>
+            </div>
         
-        <td><a routerLink='/book-details/{{b.bookid}}'>{{b.booktitle}}</a></td>
-        <td>{{b.author}}</td>
-        <td>{{b.publisher}}</td>
-        <td>{{b.edition}}</td>
-        <td>{{b.price}}</td>
-    </tr>
-</table>
+
+            <table class="table table-striped">
+                <tr>
+                
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Branch</th>
+                    <th>Edition</th>
+                    <th>Price</th>
+                </tr>
+                <tr *ngFor="let b of books">
+                    
+                    <td><a routerLink='/book-details/{{b.bookid}}'>{{b.booktitle}}</a></td>
+                    <td>{{b.author}}</td>
+                    <td>{{b.publisher}}</td>
+                    <td>{{b.branch}}</td>
+                    <td>{{b.edition}}</td>
+                    <td>{{b.price}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>

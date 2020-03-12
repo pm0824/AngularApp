@@ -16,6 +16,7 @@ export class AddTeacherComponent implements OnInit {
   imageString: string= null;
   public video;
   public canvas;
+  public branches=['CSE', 'IT', 'ELN','MECH','CIVIL'];
 
 
   public message='';

@@ -9,9 +9,10 @@ import { ServerConfig } from '../server-config';
 })
 export class SearchBookComponent implements OnInit {
 
-  public books;
+  public books=[];
   public message = '';
   public booktitle = '';
+  public flag=1;
 
   constructor(private http: HttpClient) { }
 
@@ -31,6 +32,10 @@ export class SearchBookComponent implements OnInit {
       this.message = 'Sent successfully';
       this.books = response['result'];
       console.log('this.books', this.books);
+      if(this.books.length===0)
+      {
+        this.flag=0;
+      }
     }, (err) => {
       console.log('error', err);
       this.message = 'Error!';

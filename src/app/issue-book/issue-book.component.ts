@@ -135,8 +135,8 @@ export class IssueBookComponent implements OnInit {
       console.log('response', response);
 
       this.message="sent barcode image";
-      this.books=response['result'];
-      this.bcopyid=this.books[0];
+      this.books=response['result'][1];
+      this.bcopyid=response['result'][0];
       
       console.log('bookcopyid',this.bcopyid);
       console.log('this.books',this.books);

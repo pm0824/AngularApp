@@ -15,6 +15,8 @@ import { FindStudentComponent } from './find-student/find-student.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { IssueBookComponent } from './issue-book/issue-book.component';
 import { SearchBookComponent } from './search-book/search-book.component';
+import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
+import { ListTeacherComponent } from './list-teacher/list-teacher.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SearchBookComponent } from './search-book/search-book.component';
     FindStudentComponent,
     BookDetailsComponent,
     IssueBookComponent,
-    SearchBookComponent
+    SearchBookComponent,
+    UpdateTeacherComponent,
+    ListTeacherComponent
   ],
   imports: [
     BrowserModule,

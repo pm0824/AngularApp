@@ -15,7 +15,8 @@ export class BookDetailsComponent implements OnInit {
   public message = '';
   public base_url;
   public bookid;
-  public show=1;
+  public show=0;
+  public flag=1;
   public barcode;
   base64textString: string = null;
   imageString: string= null;
@@ -147,10 +148,13 @@ export class BookDetailsComponent implements OnInit {
       this.message = 'Record found successfully';
       this.bookcopies = response['result'];
       console.log('this.bookcopies',this.bookcopies);
-      if((this.bookcopies).length==0)
+      if((this.bookcopies).length!==0)
 
       {
-        this.show=0;
+        this.show=1;
+      }
+      else{
+        this.flag=0;
       }
     }, (err) => {
       console.log('error', err);
