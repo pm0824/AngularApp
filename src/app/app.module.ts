@@ -17,6 +17,7 @@ import { IssueBookComponent } from './issue-book/issue-book.component';
 import { SearchBookComponent } from './search-book/search-book.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { ListTeacherComponent } from './list-teacher/list-teacher.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ListTeacherComponent } from './list-teacher/list-teacher.component';
     IssueBookComponent,
     SearchBookComponent,
     UpdateTeacherComponent,
-    ListTeacherComponent
+    ListTeacherComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
