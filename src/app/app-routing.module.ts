@@ -13,6 +13,9 @@ import { SearchBookComponent } from './search-book/search-book.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { ListTeacherComponent } from './list-teacher/list-teacher.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LibrarianComponent } from './librarian/librarian.component';
+import { StudentComponent } from './student/student.component';
+import { TeacherComponent } from './teacher/teacher.component';
 
 
 const routes: Routes = [
@@ -47,7 +50,9 @@ const routes: Routes = [
   {path: 'issue-book', component:IssueBookComponent},
   {path: 'search-book', component:SearchBookComponent},
   { path: 'update-teacher/:id', component: UpdateTeacherComponent },
-
+  {path: 'librarian', component:LibrarianComponent},
+  {path: 'student', component:StudentComponent},
+  {path: 'teacher', component:TeacherComponent}
 ];
 
 @NgModule({

@@ -18,6 +18,9 @@ import { SearchBookComponent } from './search-book/search-book.component';
 import { UpdateTeacherComponent } from './update-teacher/update-teacher.component';
 import { ListTeacherComponent } from './list-teacher/list-teacher.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LibrarianComponent } from './librarian/librarian.component';
+import { StudentComponent } from './student/student.component';
+import { TeacherComponent } from './teacher/teacher.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SearchBookComponent,
     UpdateTeacherComponent,
     ListTeacherComponent,
-    DashboardComponent
+    DashboardComponent,
+    LibrarianComponent,
+    StudentComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,
