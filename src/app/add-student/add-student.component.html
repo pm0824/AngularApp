@@ -77,8 +77,10 @@
                 
             </div>
         </div>
-        <div class="text-info text-center">
-            <p>{{message}}</p>
+        <div class="text-info text-center" style="padding: 0 10px;">
+            <div *ngIf='message!==""' class="alert alert-primary" role="alert">
+                {{message}}
+              </div>
         </div>
     </div>
 </div>

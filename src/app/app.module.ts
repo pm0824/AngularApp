@@ -21,6 +21,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LibrarianComponent } from './librarian/librarian.component';
 import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
+import { ReturnBookComponent } from './return-book/return-book.component';
+import { LibLoginComponent } from './lib-login/lib-login.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { TeacherComponent } from './teacher/teacher.component';
     DashboardComponent,
     LibrarianComponent,
     StudentComponent,
-    TeacherComponent
+    TeacherComponent,
+    ReturnBookComponent,
+    LibLoginComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

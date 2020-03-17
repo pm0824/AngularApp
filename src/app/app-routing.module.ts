@@ -16,6 +16,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LibrarianComponent } from './librarian/librarian.component';
 import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
+import { ReturnBookComponent } from './return-book/return-book.component';
+import { LibLoginComponent } from './lib-login/lib-login.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 const routes: Routes = [
@@ -52,7 +55,14 @@ const routes: Routes = [
   { path: 'update-teacher/:id', component: UpdateTeacherComponent },
   {path: 'librarian', component:LibrarianComponent},
   {path: 'student', component:StudentComponent},
-  {path: 'teacher', component:TeacherComponent}
+  {path: 'teacher', component:TeacherComponent},
+  {
+    path:'return-book', component:ReturnBookComponent
+  },{
+    path:'lib-login', component:LibLoginComponent
+  },{
+    path:'about-us', component:AboutUsComponent
+  }
 ];
 
 @NgModule({

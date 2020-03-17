@@ -14,12 +14,14 @@
             <a class="nav-link" routerLink='/'>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink='/add-student'>About Us</a>
+            <a class="nav-link" routerLink='/about-us'>About Us</a>
           </li>
           
         </ul>
       </div>
     </div>
   </nav>
+  <div class="myclass" [ngStyle]="setMyStyle()">
     <router-outlet></router-outlet>
+  </div>
 

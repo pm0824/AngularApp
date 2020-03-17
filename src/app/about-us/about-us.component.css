@@ -1,0 +1,165 @@
+.team-section{
+    overflow: hidden;
+    text-align: center;
+   
+    padding: 60px;
+
+}
+.team-section h1{
+    text-transform: uppercase;
+    margin-bottom:60px;
+    color: white;
+    font-size: 40px;
+}
+.border{
+    display: block;
+    margin: auto;
+    width: 160px;
+    height:3px;
+    margin-bottom: 10px;
+}
+.ps1{
+    margin-bottom: 40px;
+}
+.ps1 a{
+    display: block;
+    margin:0 30px ;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #37FDFC;
+}
+.ps1 a img{
+    width: 100%;
+    transition: 0.4s all; 
+}
+.container1 {
+    position: relative;
+    max-width: 500px;
+    padding-left: 10%;
+    top: 1%;
+    width: 30%;
+    left:-5%;
+    bottom: 1%;
+    margin: 0;
+}
+.container1 .content1 {
+  position: absolute;
+  bottom: -5%;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 56%;
+  left:70%;
+  padding-left: 1%;
+  font-size: 25px;
+}
+.ps2{
+    margin-bottom: 40px;
+}
+.ps2 a{
+    display: block;
+    margin:0 30px ;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #37FDFC;
+}
+.ps2 a img{
+    width: 100%;
+    transition: 0.4s all; 
+ }
+.container2 {
+    position: relative;
+    max-width: 500px;
+    padding-left: 10%;
+    top: -13%;
+    left:-5%;
+    bottom: 3%;
+    margin: 0;
+}
+.container2 .content2 {
+  position: absolute;
+  bottom: -10;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 52%;
+  left:60%;
+  padding-left: 1%;
+  font-size: 25px;
+}
+.ps3{
+    margin-bottom: 40px;
+}
+.ps3 a{
+    display: block;
+    margin:0 30px ;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #37FDFC;
+}
+.ps3 a img{
+    width: 100%;
+    transition: 0.4s all; 
+}
+.container3 {
+    position: relative;
+    max-width: 500px;
+    padding-left: 10%;
+    top: -13%;
+    left:-5%;
+    bottom: 3%;
+    margin: 0;
+}
+.container3 .content3 {
+  position: absolute;
+  bottom: -10%;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 52%;
+  left:60%;
+  padding-left: 1%;
+  font-size: 25px;
+}
+.ps4{
+    margin-bottom: 40px;
+}
+.ps4 a{
+    display: block;
+    margin:0 30px ;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #37FDFC;
+}
+.ps4 a img{
+    width: 100%;
+    transition: 0.4s all; 
+}
+.container4 {
+    position: relative;
+    max-width: 500px;
+    padding-left: 10%;
+    top: -20%;
+    left:-5%;
+    bottom: 3%;
+    margin: 0;
+}
+.container4 .content4 {
+  position: absolute;
+  bottom: -10%;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 52%;
+  left:60%;
+  padding-left: 1%;
+  font-size: 25px;
+}

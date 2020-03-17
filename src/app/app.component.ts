@@ -27,4 +27,15 @@ export class AppComponent {
     this.base64textString = btoa(binaryString);
     console.log(btoa(binaryString));
   }
+
+  setMyStyle() {
+    let styles = {
+      
+      'background-image': 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(134,125,249,0.36224912328212533) 0%), url("assets/img/back.jpg")',
+      'background-repeat':'no-repeat',
+      'background-size':'100% 100%'
+    };
+    return styles;
+  }
+
 }

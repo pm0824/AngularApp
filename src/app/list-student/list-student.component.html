@@ -1,48 +1,57 @@
-<div class="content">
-    <div>
-    <table>
-        <tr>
-            <td>Branch</td>
-            <td>Class</td>
-            <td>Year</td>
-        </tr>
-        <tr>
-            <td>
-                <select [(ngModel)]='selectedBranch'>
-                    <option *ngFor="let b of branches">{{b}}</option>
-                </select>
-               
-            </td>
-            <td>
-                <select [(ngModel)]='selectedClass'>
-                    <option *ngFor="let c of classes">{{c}}</option>
-                </select>
-                
-            </td>
-            
-            <td><input type="text" name="" id="" [(ngModel)]='year'></td>
-        </tr>
-    </table>
-    <button type="button" class="btn btn-primary" (click)='onSearch()'>Search</button>
+<section style="padding:20px 19% 20px 19%;">
 
-<!-- {{students}} -->
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Roll</th>
-        <th>Name</th>
-        <th>Branch</th>
-        <th>Class</th>
-        <th>Year</th>
-    </tr>
-    <tr *ngFor="let s of students">
-        <td>{{s.studentid}}</td>
-        <td>{{s.rollno}}</td>
-        <td><a routerLink='/update-student/{{s.studentid}}'>{{s.name}}</a></td>
-        <td>{{s.branch}}</td>
-        <td>{{s.sclass}}</td>
-        <td>{{s.edyear}}</td>
-    </tr>
-</table>
-</div>
-</div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3>SEARCH STUDENT</h3>
+            <hr>
+            <table>
+                <tr>
+                    <td>Branch</td>
+                    <td>Class</td>
+                    <td>Year</td>
+                </tr>
+                <tr>
+                    <td>
+                        <select [(ngModel)]='selectedBranch'>
+                            <option *ngFor="let b of branches">{{b}}</option>
+                        </select>
+                    
+                    </td>
+                    <td>
+                        <select [(ngModel)]='selectedClass'>
+                            <option *ngFor="let c of classes">{{c}}</option>
+                        </select>
+                        
+                    </td>
+                    
+                    <td><input type="text" name="" id="" [(ngModel)]='year'></td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-primary" (click)='onSearch()'>Search</button>
+
+        <!-- {{students}} -->
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Roll</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Class</th>
+                    <th>Year</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let s of students">
+                    <td>{{s.studentid}}</td>
+                    <td>{{s.rollno}}</td>
+                    <td><a routerLink='/update-student/{{s.studentid}}'>{{s.name}}</a></td>
+                    <td>{{s.branch}}</td>
+                    <td>{{s.sclass}}</td>
+                    <td>{{s.edyear}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
