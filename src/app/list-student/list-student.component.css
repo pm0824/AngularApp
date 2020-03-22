@@ -3,6 +3,14 @@ h1,h2,h3,h4,h5{
     background-color: black;
     color: white;
 }
+p{
+    padding-top: 10px;
+}
+
+.ip{
+    padding: 10px 30px;
+}
+
 
 .square_btn{
     display: inline-block;

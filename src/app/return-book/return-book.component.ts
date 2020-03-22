@@ -159,9 +159,9 @@ export class ReturnBookComponent implements OnInit {
       bcopyid:this.bcopyid,
        }).subscribe((response) => {
       console.log('response', response);
-      if(response['result']==='failed')
+      if(response['result']>0)
       {
-        this.message="You Have To Pay Fine"
+        this.message="You Must Pay A Fine Of Rs. " + response['result'] + "."
       }
       else
       this.message="Book returned";

@@ -12,6 +12,7 @@ import { ServerConfig } from '../server-config';
 export class UpdateStudentComponent implements OnInit {
 
   //const id=0;
+  public show=0
   public student;
   public message='';
   public name = '';
@@ -102,10 +103,7 @@ export class UpdateStudentComponent implements OnInit {
     this.canvas.toBlob((blob) => {
       console.log('blob', blob);
       this.createImageFromBlob(blob);
-      // const img = new Image();
-      // img.src = window.URL.createObjectURL(blob);
-      // console.log('img.src',img.src);
-      // };
+      
     });
   
   
@@ -140,7 +138,9 @@ export class UpdateStudentComponent implements OnInit {
       image: this.base64textString
     }).subscribe((response) => {
       console.log('response', response);
+      this.show=1;
       this.message='Student updated successfully';
+
       // console.log('error',err);
     }, (err) => {
       console.log('error', err);

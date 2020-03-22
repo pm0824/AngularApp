@@ -1,44 +1,61 @@
-<section style="padding:20px 19% 20px 19%;">
+<section style="padding:20px 17% 20px 17%;">
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h3>SEARCH STUDENT</h3>
-            <hr>
-            <table>
-                <tr>
-                    <td>Branch</td>
-                    <td>Class</td>
-                    <td>Year</td>
-                </tr>
-                <tr>
-                    <td>
-                        <select [(ngModel)]='selectedBranch'>
-                            <option *ngFor="let b of branches">{{b}}</option>
-                        </select>
-                    
-                    </td>
-                    <td>
-                        <select [(ngModel)]='selectedClass'>
-                            <option *ngFor="let c of classes">{{c}}</option>
-                        </select>
-                        
-                    </td>
-                    
-                    <td><input type="text" name="" id="" [(ngModel)]='year'></td>
-                </tr>
-            </table>
-            <button type="button" class="btn btn-primary" (click)='onSearch()'>Search</button>
+
+            <div class="row " style="margin:0 30px;">
+                <div class="col-sm-4">
+                    <div class="row ">
+                        <div class="col-sm-2">
+                            <p>Branch:</p>
+                        </div>
+                        <div class="col-sm-2 ip">
+                            <select [(ngModel)]='selectedBranch'>
+                                <option *ngFor="let b of branches">{{b}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-sm-2 ">
+                            <p>Class:</p>
+                        </div>
+                        <div class="col-sm-2 ip">
+                            <select [(ngModel)]='selectedClass'>
+                                <option *ngFor="let c of classes">{{c}}</option>
+                            </select>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p>Year:</p>
+                        </div>
+                        <div class="col-sm-2 ip">
+                            <input type="text" name="" id="" [(ngModel)]='year'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="button" class="square_btn" (click)='onSearch()'>Search</button>
+            </div>
+            <br>
+            
 
         <!-- {{students}} -->
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Roll</th>
+                    <th>Roll No.</th>
                     <th>Name</th>
-                    <th>Branch</th>
-                    <th>Class</th>
-                    <th>Year</th>
+                    <th>Books Issued</th>
+                    <th>Books Returned</th>
+                    <th>Fine</th>
                 </tr>
                 </thead>
                 <tbody>
