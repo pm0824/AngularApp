@@ -1,47 +1,60 @@
-<div class="regform">
-
-    <div class="card">
-        <div class="card-header text-center">
-            <h5>Teacher Registration Form</h5>
-        </div>
-        <div class="card-body">
-
-            <img src='{{base_url}}/static/images/teacher/{{teacher.teacherid}}.jpg' />
-            <br>
-            <label for="">Name: </label>
-             <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='teacher.name'>
-
-            <label for="">ID: </label>
-            <input type="number" name="id" id="" class="form-control" [(ngModel)]='teacher.id'>
+<section style="padding:20px 10% 20px 10%;">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3>Teacher Registration Form</h3>
+        
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                     <img src='{{base_url}}/static/images/teacher/{{teacher.teacherid}}.jpg' />
+                </div>     
             
 
-            <label for="">Branch: </label>
-            <select [(ngModel)]='teacher.branch'>
-                <option *ngFor="let b of branches">{{b}}</option>
-            </select>
-            <br>
-            <label for="">Capture your face: </label><br>
-            <!--input type="file" name="image" id=""  (change)="handleFileSelect($event)"><br/-->
-            <div class="video-wrap">
-              <video id="video" playsinline autoplay></video>
-          </div>
-          
-          <!-- Trigger canvas web API -->
-          <div class="controller">
-              <button id="snap" (click)='onCapture()' class="btn btn-info btn-block">Capture</button>
-          </div>
-          <!-- Webcam video snapshot -->
-<canvas id="canvas" width="320" height="240"></canvas>
+                <div class="col-sm-4">    
+                    <label for="">Name: </label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='teacher.name'>
 
-            <div *ngIf='base64textString !== null'>
-                Photo captured
+                    <label for="">ID: </label>
+                    <input type="number" name="id" id="" class="form-control" [(ngModel)]='teacher.id'>
+                </div> 
+                
+                <div class="col-sm-4">
+                    <label for="">Branch: </label>
+                    <select [(ngModel)]='teacher.branch'>
+                        <option *ngFor="let b of branches">{{b}}</option>
+                    </select>
+                    <br>
+                </div>
             </div>
             <br>
-            <button type="button" class="btn btn-primary btn-block" (click)='onUpdate()' >Save</button>
+            <label for="">Capture your face: </label><br>
+            <div class="row">
+                <div class="col-sm-6 text-center">
+            <!--input type="file" name="image" id=""  (change)="handleFileSelect($event)"><br/-->
+                    <div class="video-wrap">
+                        <video id="video" playsinline autoplay class="camera"></video>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <!-- Webcam video snapshot -->
+                    <canvas id="canvas" width="320" height="240" class="camera"></canvas>
+                </div>             
+            </div>
+          
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                <!-- Trigger canvas web API -->
+                    <div class="controller">
+                        <button id="snap" (click)='onCapture()' class="square_btn">Capture</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="square_btn" (click)='onUpdate()' >Save</button>
+                </div>
+            </div>
             <br/>
-            {{message}}
+            <div *ngIf='show===1'>
+                {{message}}
+            </div>
         </div>
-
-
     </div>
-</div>
+</section>

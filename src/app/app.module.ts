@@ -24,6 +24,8 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { ReturnBookComponent } from './return-book/return-book.component';
 import { LibLoginComponent } from './lib-login/lib-login.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { TIssuebookComponent } from './t-issuebook/t-issuebook.component';
+import { TReturnbookComponent } from './t-returnbook/t-returnbook.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
     TeacherComponent,
     ReturnBookComponent,
     LibLoginComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    TIssuebookComponent,
+    TReturnbookComponent
   ],
   imports: [
     BrowserModule,

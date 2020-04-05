@@ -1,0 +1,45 @@
+h1,h2,h3,h4,h5{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+input{
+    width: 100%;
+    margin: 4px 0;
+}
+
+select{
+    margin:15px 10px;
+}
+
+.camera{
+    border: 12px solid rgb(65, 63, 63);
+
+}
+
+.square_btn{
+    display: inline-block;
+    padding: 7px 20px;
+	border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(#6795fd 0%, #67ceff 100%);
+    background-image: linear-gradient(45deg,#6795fd 0%, #67ceff 100%);
+    transition: .4s;
+}
+
+.square_btn:hover {
+    background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+.sbtn{
+    margin:10px 0 10px 0;
+    text-align: center;
+}
+.search{
+    display: flex;
+    justify-content: center;
+}

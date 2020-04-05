@@ -1,0 +1,90 @@
+
+<section style="padding:10px 12% 10px 12%;">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-5">
+                    <div class="capture-section">
+                        <video id="video" playsinline autoplay class="camera"></video>
+                    </div>
+                </div>
+
+                <div class="col-md-2 text-center">
+                    <div class="cap">
+                        <button id="snap" (click)='onCapture()' class="cbtn"  type="button">CAPTURE</button>
+                    </div>
+                </div>
+
+
+                <div class="col-md-5">
+                    <div class="capture-section">
+                        <canvas id="canvas" width="320" height="240" class="camera"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="capture-section">
+                    <button (click)=onSearch() class="btn btn-primary">Find Me</button>
+
+                    <table *ngIf='teachers!=null' class="table table-striped">
+                        <tr>
+                            <th>Name</th>
+                            
+
+                            <th>Branch</th>
+                           
+
+                        </tr>
+                        <tr *ngFor="let t of teachers">
+                            <td>{{t.name}}</td>
+                           
+
+                            <td>{{t.branch}}</td>
+                           
+
+                        </tr>
+                    </table>        
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="capture-section">
+                    <button (click)=onFindbook() class="btn btn-primary">Find Book</button>
+
+                    <table *ngIf='books!=null' class="table table-striped">
+                        <tr>
+
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Publisher</th>
+                            <th>Edition</th>
+
+                        </tr>
+                        <tr>
+
+                            <td>{{books.booktitle}}</td>
+                            <td>{{books.author}}</td>
+                            <td>{{books.publisher}}</td>
+                            <td>{{books.edition}}</td>
+
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+            </div>
+            <!-- {{students}} -->
+        <br>
+
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary"  (click)=onReturnbook()>Return Book</button>  
+            </div>
+
+
+
+
+        <p *ngIf='message!=null' class="d-flex justify-content-center">{{message}}</p>
+
+        </div>
+    </div>
+</section>
