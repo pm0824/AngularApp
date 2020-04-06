@@ -9,6 +9,7 @@ import { ServerConfig } from '../server-config';
 })
 export class ListBookComponent implements OnInit {
 
+  
   public books;
   public title = '';
   public author ='';
@@ -20,6 +21,21 @@ export class ListBookComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+
+    this.http.post(ServerConfig.BASE_URL + '/getallbooks', {
+      
+    }).subscribe((response) => {
+      console.log('response', response);
+      this.message = 'Sent successfully';
+      this.books = response['result'];
+      console.log('this.books',this.books);
+    }, (err) => {
+      console.log('error', err);
+      this.message = 'Error!';
+    });
+
+    console.log('saving data');
+
   }
 
    
@@ -28,8 +44,7 @@ export class ListBookComponent implements OnInit {
 
     this.http.post(ServerConfig.BASE_URL + '/listbooks', {
       title: this.title,
-      author: this.author,
-      publisher: this.publisher
+      
     }).subscribe((response) => {
       console.log('response', response);
       this.message = 'Sent successfully';

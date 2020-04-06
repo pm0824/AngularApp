@@ -5,29 +5,24 @@
             <h3>FIND BOOKS</h3>
             <hr>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-2 text-center">
                     <label>Title :</label>
+                </div>
+                <div class="col-sm-6">
                     <input class="form-control" type="text" [(ngModel)]='title'>
                 </div>
                 <div class="col-sm-4">
-                    <label>Author :</label>
-                    <input class="form-control" type="text" [(ngModel)]='author'>
-                </div>
-                <div class="col-sm-4">
-                    <label>Publisher :</label>
-                    <input class="form-control" type="text" [(ngModel)]='publisher'>
+                    <div >
+                        <button (click)='onSearch()' class="square_btn">Search</button>
+                    </div>
                 </div>
 
-            </div>
-
-            <div class="sbtn">
-                <button (click)='onSearch()' class="square_btn">Search</button>
             </div>
         
-
+            <br>
             <table class="table table-striped">
                 <tr>
-                
+                    <th>Sr. No.</th>
                     <th>Title</th>
                     <th>Author</th>
                     <th>Publisher</th>
@@ -36,7 +31,7 @@
                     <th>Price</th>
                 </tr>
                 <tr *ngFor="let b of books">
-                    
+                    <td>{{b.bookid}}</td>
                     <td><a routerLink='/book-details/{{b.bookid}}'>{{b.booktitle}}</a></td>
                     <td>{{b.author}}</td>
                     <td>{{b.publisher}}</td>

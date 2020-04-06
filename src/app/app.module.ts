@@ -26,6 +26,7 @@ import { LibLoginComponent } from './lib-login/lib-login.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TIssuebookComponent } from './t-issuebook/t-issuebook.component';
 import { TReturnbookComponent } from './t-returnbook/t-returnbook.component';
+import { TSearchbookComponent } from './t-searchbook/t-searchbook.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { TReturnbookComponent } from './t-returnbook/t-returnbook.component';
     LibLoginComponent,
     AboutUsComponent,
     TIssuebookComponent,
-    TReturnbookComponent
+    TReturnbookComponent,
+    TSearchbookComponent
   ],
   imports: [
     BrowserModule,

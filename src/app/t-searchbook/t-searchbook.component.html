@@ -1,0 +1,46 @@
+<section style="padding:20px 17% 20px 17%;">
+
+    <div class="jumbotron jumbotron-fluid">     
+        <div class="container">
+            <h3>SEARCH BOOK</h3>
+            <div class="search">
+                <input type="text" placeholder="Enter book name" [(ngModel)]='booktitle'/>
+                <div class="sbtn">
+                    <button (click)='onSearch()' class="square_btn">Search</button>
+                </div>
+            </div>
+            <div *ngIf='flag===0' class="text-center text-danger">
+                <p>Book Does not exist</p>
+            </div>
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                   
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Edition</th>
+                    <th scope="col">Available</th>
+                    <th scope="col">Total books</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let b of books">
+                   
+                    <td><a routerLink='/t-issuebook'>{{b[1]}}</a></td>
+                    <td>{{b[2]}}</td>
+                    <td>{{b[3]}}</td>
+                    <td>{{b[5]}}</td>
+                    <td>{{b[7]}}</td>
+                    <td>{{b[8]}}</td>
+                    
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>  
+    
+    </section>
+    
