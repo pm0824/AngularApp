@@ -60,12 +60,12 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let s of students">
-                    <td>{{s.studentid}}</td>
+                    <td>{{s.id}}</td>
                     <td>{{s.rollno}}</td>
-                    <td><a routerLink='/update-student/{{s.studentid}}'>{{s.name}}</a></td>
-                    <td>{{s.branch}}</td>
-                    <td>{{s.sclass}}</td>
-                    <td>{{s.edyear}}</td>
+                    <td><a routerLink='/update-student/{{s.userid}}'>{{s.name}}</a></td>
+                    <td>{{s.totalissue}}</td>
+                    <td>{{s.totalreturn}}</td>
+                    <td>{{s.fineremain}}</td>
                 </tr>
                 </tbody>
             </table>
