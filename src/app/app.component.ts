@@ -30,8 +30,8 @@ export class AppComponent {
 
   setMyStyle() {
     let styles = {
-      
-      'background-image': 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(134,125,249,0.36224912328212533) 0%), url("assets/img/back.jpg")',
+      'height':'100vh',
+      'background-image': 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(134,125,249,0.36224912328212533) 0%), url("assets/img/main-bg.jpeg")',
       'background-repeat':'no-repeat',
       'background-size':'100% 100%'
     };
