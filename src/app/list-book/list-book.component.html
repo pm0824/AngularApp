@@ -1,4 +1,4 @@
-<section style="padding:20px 12% 20px 12%;">
+<section style="padding:20px 9% 20px 9%;">
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -20,7 +20,7 @@
             </div>
         
             <br>
-            <table class="table table-striped">
+            <table class="table table-bordered table-dark">
                 <tr>
                     <th>Sr. No.</th>
                     <th>Title</th>
@@ -32,7 +32,7 @@
                 </tr>
                 <tr *ngFor="let b of books">
                     <td>{{b.bookid}}</td>
-                    <td><a routerLink='/book-details/{{b.bookid}}'>{{b.booktitle}}</a></td>
+                    <td><a routerLink='/book-details/{{b.bookid}}'>{{b.booktitle}} &rarr;</a></td>
                     <td>{{b.author}}</td>
                     <td>{{b.publisher}}</td>
                     <td>{{b.branch}}</td>

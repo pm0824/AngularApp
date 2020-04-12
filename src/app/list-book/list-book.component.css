@@ -1,2 +1,6 @@
 @import "../../css/main.css";
 @import "../../css/buttons.css";
+
+a{
+    color: white;
+}
