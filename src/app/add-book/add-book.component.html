@@ -2,49 +2,56 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h3>ADD NEW BOOK</h3>
-            <hr>
+            <p class="result">{{message}}</p>
             <div style="padding: 5px 15px;">
                 <div class="form-group row">
-                    <label class="col-sm-2">Book Title: </label>
+                    <label class="col-sm-2 text-center">Book Title: </label>
                     <div class="col-sm-10">
                         <input type="text"  class="form-control" [(ngModel)]='booktitle'>            
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2">Author: </label>
+                    <label class="col-sm-2 text-center">Author: </label>
                     <div class="col-sm-10">
                         <input type="text"  id="" class="form-control" [(ngModel)]='author'>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2">Publisher: </label>
+                    <label class="col-sm-2 text-center">Publisher: </label>
                     <div class="col-sm-10">
                         <input type="text"  id="" class="form-control" [(ngModel)]='publisher'>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2">Branch: </label>
+                    <label class="col-sm-2 text-center">Branch: </label>
                     <div class="col-sm-10">
                         <input type="text"  id="" class="form-control" [(ngModel)]='branch'>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-sm-2">Edition: </label>
-                    <div class="col-sm-10">
-                        <input type="text" id="" class="form-control" [(ngModel)]='edition'>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 text-center">Edition: </label>
+                            <div class="col-sm-8">
+                                <input type="text" id="" class="form-control" [(ngModel)]='edition'>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 text-center">Price: </label>
+                            <div class="col-sm-8">
+                                <input type="number"  class="form-control" [(ngModel)]='price'>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-sm-2">Price: </label>
-                    <div class="col-sm-10">
-                        <input type="number"  class="form-control" [(ngModel)]='price'>
-                    </div>
-                </div>
+                
                 <div style="text-align: center;">
-                    <button (click)='onSave()' class="square_btn" >Save</button>
+                    <button (click)='onSave()' class="square_btn" >Add Book</button>
                 </div>
             </div>
-{{message}}
+
         </div>
     </div>
 

@@ -13,19 +13,6 @@ html{
 body {
   box-sizing: border-box;
  min-height: 100vh;
+ background-color: rgb(167, 165, 165);
 }
 
-
-
-
-
-.bg{
-    background:rgba(0, 0, 0, 0.2);
-    height: 100vh;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  image-rendering: crisp-edges;
-}
