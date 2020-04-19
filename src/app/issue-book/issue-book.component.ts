@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ServerConfig } from '../server-config';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-issue-book',
@@ -8,6 +9,9 @@ import { ServerConfig } from '../server-config';
   styleUrls: ['./issue-book.component.css']
 })
 export class IssueBookComponent implements OnInit {
+
+  model: NgbDateStruct;
+
   base64textString: string = null;
   imageString: string= null;
   public video;

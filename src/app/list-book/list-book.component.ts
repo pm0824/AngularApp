@@ -26,12 +26,13 @@ export class ListBookComponent implements OnInit {
       
     }).subscribe((response) => {
       console.log('response', response);
-      this.message = 'Sent successfully';
+     
       this.books = response['result'];
+     
       console.log('this.books',this.books);
     }, (err) => {
       console.log('error', err);
-      this.message = 'Error!';
+      this.message = 'Something went wrong...';
     });
 
     console.log('saving data');
@@ -47,8 +48,11 @@ export class ListBookComponent implements OnInit {
       
     }).subscribe((response) => {
       console.log('response', response);
-      this.message = 'Sent successfully';
+     
       this.books = response['result'];
+      if(this.books.length == 0){
+        this.message="Book is not available"
+      }
       console.log('this.books',this.books);
     }, (err) => {
       console.log('error', err);

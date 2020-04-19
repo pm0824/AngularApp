@@ -13,6 +13,7 @@ export class SearchBookComponent implements OnInit {
   public message = '';
   public booktitle = '';
   public flag=1;
+  public showtable=0;
 
   constructor(private http: HttpClient) { }
 
@@ -35,6 +36,9 @@ export class SearchBookComponent implements OnInit {
       if(this.books.length===0)
       {
         this.flag=0;
+      }
+      else{
+        this.showtable=1;
       }
     }, (err) => {
       console.log('error', err);

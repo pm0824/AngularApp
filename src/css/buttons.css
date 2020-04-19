@@ -44,6 +44,8 @@
   transform: rotate(10deg);
 }
 
+button:focus { outline:0 !important; }
+
 @media only screen and (max-width: 765px) {
     .cap {
       margin-top: 0;

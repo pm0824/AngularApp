@@ -4,16 +4,16 @@
     <div class="container">
         <h3>SEARCH BOOK</h3>
         <div class="search">
-            <input type="text" placeholder="Enter book name" [(ngModel)]='booktitle'/>
+            <input type="text" placeholder="Enter book name" class="form-control" [(ngModel)]='booktitle'/>
             <div class="sbtn">
                 <button (click)='onSearch()' class="square_btn">Search</button>
             </div>
         </div>
-        <div *ngIf='flag===0' class="text-center text-danger">
+        <div *ngIf='flag===0 && showtable===0' class="text-center text-danger">
             <p>Sorry! Book is not available.</p>
         </div>
         <hr>
-        <table class="table table-striped">
+        <table *ngIf='showtable!=0' class="table table-striped">
             <thead>
             <tr>
                

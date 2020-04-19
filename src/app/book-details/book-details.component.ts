@@ -53,10 +53,9 @@ export class BookDetailsComponent implements OnInit {
         id:id
       }).subscribe((response) => {
         console.log('response', response);
-        this.message='successful';
+      
         this.books=response['result'];
-        // name = this.student.name
-        // console.log('error',err);
+       
       }, (err) => {
         console.log('error', err);
         this.message='Error';
@@ -145,13 +144,14 @@ export class BookDetailsComponent implements OnInit {
       id: this.bookid
     }).subscribe((response) => {
       console.log('response', response);
-      this.message = 'Record found successfully';
+     
       this.bookcopies = response['result'];
       console.log('this.bookcopies',this.bookcopies);
       if((this.bookcopies).length!==0)
 
       {
         this.show=1;
+        this.message =(this.bookcopies).length+ ' Copies found';
       }
       else{
         this.flag=0;

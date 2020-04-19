@@ -1,10 +1,4 @@
 @import "../../css/main.css";
 @import "../../css/buttons.css";
+@import "../../css/notification.css";
 
-.result{
-    text-align: center;
-    font-size: larger;
-    font-weight: 500;
-    color: #5643fa;
-    letter-spacing: 0.1em;
-}

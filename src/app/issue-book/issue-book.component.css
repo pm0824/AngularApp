@@ -15,7 +15,7 @@
     margin: 20px;
 }
 
-.issue button{
+.issue> button{
     margin: 0 10px;
 }
 
@@ -24,4 +24,14 @@
 }
 table{
     margin-bottom: 0;
+}
+.input-group-append{
+    background-image: url(../../assets/img/calendar.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dates{
+    margin: 0 70px;
 }

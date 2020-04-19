@@ -3,24 +3,23 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h3>FIND BOOKS</h3>
-            <hr>
-            <div class="row">
-                <div class="col-sm-2 text-center">
+           
+            <div class="flexbox">
+                <div class="flex-element">
                     <label>Title :</label>
                 </div>
-                <div class="col-sm-6">
+                <div class="flex-element">
                     <input class="form-control" type="text" [(ngModel)]='title'>
                 </div>
-                <div class="col-sm-4">
-                    <div >
-                        <button (click)='onSearch()' class="square_btn">Search</button>
-                    </div>
+                <div class="flex-element">
+                    <button (click)='onSearch()' class="square_btn">Search</button>
                 </div>
-
             </div>
-        
+            
+            <p class="result">{{message}}</p>
+                   
             <br>
-            <table class="table table-bordered table-dark">
+            <table *ngIf='books.length!=0'>
                 <tr>
                     <th>Sr. No.</th>
                     <th>Title</th>

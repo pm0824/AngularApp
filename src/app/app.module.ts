@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -57,6 +58,7 @@ import { TSearchbookComponent } from './t-searchbook/t-searchbook.component';
   imports: [
     BrowserModule,
     FormsModule,
+    NgbModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule

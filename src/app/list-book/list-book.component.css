@@ -1,6 +1,16 @@
 @import "../../css/main.css";
 @import "../../css/buttons.css";
+@import "../../css/layout.css";
+@import "../../css/notification.css";
+@import "../../css/addflex.css";
 
 a{
-    color: white;
+    color: black;
 }
+
+
+
+ .flex-element input{
+    width: 520px;
+}
+

@@ -2,6 +2,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h3>ADD BOOK COPIES</h3>
+            <p class="result">{{message}}</p>
             <div class="row">
                 <div class="col-sm-8">
                     <table class="table table-striped">
@@ -28,19 +29,14 @@
 
                 <div class="col-sm-4">
                     <table class="table table-striped" *ngIf="show">
-                        <tr>
-                        
-                            <th>ID</th>
-                        
+                        <tr>                        
                             <th>Barcode</th>
         
-                            <th>Delete ?</th>
+                            <th>Delete Copy</th>
                         </tr>
                         <tr *ngFor="let b of bookcopies">
-                            
-                            <td>{{b.bookcopyid}}</td>
                             <td>{{b.barcode}}</td>
-                            <td><button (click)='deleteCopy(b.bookcopyid)'>Delete</button></td>
+                            <td class="text-center"><button (click)='deleteCopy(b.bookcopyid)'><img src="../../assets/img/garbage.png" alt="Delete" width="20" height="20"></button></td>
                         </tr>
                     </table>
         
@@ -81,8 +77,8 @@
             <div class="sbtn">
                 <button (click)='addCopy()' class="square_btn">Add Copy</button>
             </div>
-            <br>
-            <p>{{message}}</p>
-            </div>
+           
+           
+        </div>
     </div>
 </section>

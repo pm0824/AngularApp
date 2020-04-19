@@ -1,62 +1,78 @@
+
 <div class="regform">
   <div class="card">
       <div class="card-header text-center">
         <h5>Teacher Registration Form</h5> 
       </div>
       <div class="card-body row">
-        <div class="col-md-4">
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="">Name: </label>
-              <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='name'required>
-            </div>
-          </div>
           
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="">ID: </label>
-              <input type="number" name="id" id="" class="form-control" [(ngModel)]='id' placeholder="Enter Enrollment ID" required>
-            </div>
-          </div>
-
-              <!--Branch Dropdown-->
-          <div class="form-row">
-            <div class="form-group col-md-12">    
-              <select [(ngModel)]='branch' class="selectpicker" data-style="btn-primary" title="Choose Branch" data-width="fit">
-                <option *ngFor="let b of branches">{{b}}</option>
-              </select>
-              <!--Branch Dropdown end-->
-            </div>
-          </div> 
-
+          <!--Form start-->
           <div class="col-md-4">
-            <label for="">Capture your face: </label><br>
-              <!--input type="file" name="image" id=""  (change)="handleFileSelect($event)"><br/-->
-            <div class="video-wrap">
+              <div class="form-row">
+                  <div class="form-group col-md-12">
+                      <label for="">Name: </label>
+                      <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]='name'required>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-md-12">
+                      <label for="">ID: </label>
+                      <input type="text" name="id" id="" class="form-control" [(ngModel)]='id' placeholder="Enter Enrollment ID" required>
+                  </div>
+              </div>
+             
+              <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="">Branch: </label>
+                      <select [(ngModel)]='branch' class="selectpicker" data-style="btn-primary" title="Choose Branch" data-width="100%">
+                          <option *ngFor="let b of branches">{{b}}</option>
+                      </select>
+                  </div>
+              </div>
+
+              
+          </div>
+          <!--Form end-->
+             
+          <!--Capture start--> 
+          <div class="col-md-4">
+              <label for="">Capture your face: </label><br>
+              
+              <div class="video-wrap">
                 <video id="video" playsinline autoplay class="camera"></video>
-            </div>
+              </div>
             
-            <!-- Trigger canvas web API -->
-            <div class="controller">
-              <div class="sbtn">
-                <button id="snap" (click)='onCapture()' class="square_btn">Capture</button>
+              <!-- Trigger canvas web API -->
+              <div class="controller">
+                  <div class="sbtn">
+                      <button (click)='onCapture()' id="snap" class="square_btn">Capture</button>
+                  </div>
               </div>
-            </div>
           </div>
+            <!--Capture end-->
             <!-- Webcam video snapshot -->
-
           <div class="col-md-4">
-            <label for="">Captured your face: </label><br>
-            <canvas id="canvas" width="320" height="240" class="camera"></canvas><br>
-              <div *ngIf='base64textString !== null'>
-                  Photo captured
-              </div>
-              <div class="sbtn">
-                <button class="square_btn" (click)='onSave()' >Save</button>
-              </div>
-             <br/>
+              <label for="">Captured your face: </label><br>
+              <canvas id="canvas" width="320" height="240" class="camera"></canvas>    <br>
+                 
+                  <div class="sbtn">
+                      <button (click)='onSave()' class="square_btn">Save</button>
+                  </div>
+                  
+                  <br/>
+              
           </div>
-        </div>
       </div>
-    </div>
+      <div class="text-info text-center" style="padding: 0 10px;">
+          <div *ngIf='message!==""' class="alert alert-primary" role="alert">
+              {{message}}
+            </div>
+      </div>
+  </div>
 </div>
+
+
+
+
+
+

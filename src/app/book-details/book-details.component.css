@@ -1,5 +1,6 @@
 @import "../../css/main.css";
 @import "../../css/buttons.css";
+@import "../../css/notification.css";
 
 .capture-section{
     display: table;
@@ -18,4 +19,7 @@
 }
 
 
-
+button{
+    background-color: transparent;
+    border: none;
+}

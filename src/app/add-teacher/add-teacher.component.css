@@ -1,13 +1,11 @@
 
 @import "../../css/buttons.css";
-
-
 .regform{
-    display: flex;
+   
     justify-content: center;
-    padding: 1% 0;
+    padding: 4% 2% 1% 2%;
+    overflow: hidden;
 }
-
 .card-body{
     padding-bottom: 0;
 }

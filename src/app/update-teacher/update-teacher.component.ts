@@ -19,7 +19,7 @@ export class UpdateTeacherComponent implements OnInit {
   public video;
   public canvas;
  
-  public branches=['Computer Science', 'IT', 'ELN','MECH','CIVIL'];
+  public branches=['CSE', 'IT', 'ELN','MECH','CIVIL'];
   
 
   public base_url;
