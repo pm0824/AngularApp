@@ -1,6 +1,6 @@
-@import "../../css/main.css";
 @import "../../css/buttons.css";
-
+@import "../../css/main.css";
+@import "../../css/notification.css";
 .issue{
     padding: 10px;
     

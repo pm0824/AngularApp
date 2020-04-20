@@ -110,7 +110,7 @@ export class ReturnBookComponent implements OnInit {
       image: this.base64textString 
     }).subscribe((response) => {
       console.log('response', response);
-      this.message = 'Sent successfully';
+     
       if (response['result']==="Fail")
         {
             console.log("Failed");
@@ -124,7 +124,7 @@ export class ReturnBookComponent implements OnInit {
     }
     }, (err) => {
       console.log('error', err);
-      this.message = 'Error!';
+      this.message = 'Something Went Wromg!';
     });
 
     console.log('saving data');
@@ -136,8 +136,6 @@ export class ReturnBookComponent implements OnInit {
       barcode: this.base64textString
     }).subscribe((response) => {
       console.log('response', response);
-
-      this.message="sent barcode image";
       this.books=response['result'][1];
       this.bcopyid=response['result'][0];
 
@@ -145,7 +143,7 @@ export class ReturnBookComponent implements OnInit {
       console.log('this.books',this.books);
       }, (err) => {
       console.log('error', err);
-      this.message = 'Error!';
+      this.message = 'Something Went Wrong!';
     });
 
     console.log('saving data');
@@ -169,7 +167,7 @@ export class ReturnBookComponent implements OnInit {
 
       }, (err) => {
       console.log('error', err);
-      this.message = 'Error!';
+      this.message = 'Something Went Wrong!';
     });
 
     console.log('saving data');
