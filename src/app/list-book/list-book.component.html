@@ -14,12 +14,15 @@
                 <div class="flex-element">
                     <button (click)='onSearch()' class="square_btn">Search</button>
                 </div>
+                <div class="flex-element">
+                    <button (click)='onDownload()' class="square_btn">Download List</button>
+                </div>
             </div>
             
             <p class="result">{{message}}</p>
                    
             <br>
-            <table *ngIf='books.length!=0'>
+            <table *ngIf='books.length!=0' id="excel-sheet">
                 <tr>
                     <th>Sr. No.</th>
                     <th>Title</th>

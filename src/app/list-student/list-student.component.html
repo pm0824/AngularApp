@@ -40,14 +40,24 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center">
-                <button type="button" class="square_btn" (click)='onSearch()'>Search</button>
+
+            <div class="row">
+                <div class="col-sm-1 offset-4">
+                    <div class="text-center">
+                        <button type="button" class="square_btn" (click)='onSearch()'>Search</button>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="text-center">
+                        <button type="button" class="square_btn" (click)='onDownload()'>Download List</button>
+                    </div>
+                </div>
             </div>
             <br>
             
 
         <!-- {{students}} -->
-            <table class="table table-striped">
+            <table class="table table-striped" id="excel-sheet">
                 <thead>
                 <tr>
                     <th>ID</th>
